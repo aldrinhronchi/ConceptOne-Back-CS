@@ -1,4 +1,5 @@
-﻿using Coopersam_WebAPI_CS.Services.Core;
+﻿using Coopersam_WebAPI_CS.Connections.Database;
+using Coopersam_WebAPI_CS.Services.Core;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Coopersam_WebAPI_CS.Controllers
@@ -21,6 +22,7 @@ namespace Coopersam_WebAPI_CS.Controllers
         {
             _logger = logger;
         }
+
         /// <summary>
         /// GetPadrao de teste
         /// </summary>

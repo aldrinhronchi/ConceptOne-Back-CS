@@ -1,0 +1,1 @@
+Scaffold-DbContext "Server=afort-hml.database.windows.net;User ID=afort;Password=@b8dic93d32;Database=luchesi_homo;Trusted_Connection=False;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir ContextModels/Luchesi -ContextDir Context -Context LuchesiContext -Namespace Afort_CARGAS_WorkerService.Context -Force -NoOnConfiguring -UseDatabaseNames -NoPluralize -Tables 

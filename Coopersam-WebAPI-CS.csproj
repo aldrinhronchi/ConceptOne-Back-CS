@@ -12,21 +12,18 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
-    <PackageReference Include="MySql.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.13" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="7.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="7.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Connections\Database\" />
+    <Folder Include="Connections\Database\Repositories\" />
     <Folder Include="Connections\Scripts\" />
-    <Folder Include="Extensions\Helpers\" />
-    <Folder Include="Extensions\Middleware\" />
     <Folder Include="Extensions\Worker\" />
     <Folder Include="Files\" />
-    <Folder Include="Models\Entities\" />
     <Folder Include="Services\Core\Interfaces\" />
   </ItemGroup>
 

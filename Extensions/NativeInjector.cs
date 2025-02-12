@@ -1,9 +1,10 @@
 ﻿using Coopersam_WebAPI_CS.Connections.Configurations;
+using Coopersam_WebAPI_CS.Connections.Database;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
-using Org.BouncyCastle.Asn1.Ocsp;
-using System.Reflection.Metadata;
+
 using System.Text;
 
 namespace Coopersam_WebAPI_CS.Extensions
@@ -29,10 +30,10 @@ namespace Coopersam_WebAPI_CS.Extensions
         {
             #region Context
 
-            //builder.Services.AddDbContext<SotequiContext>(opt =>
-            //{
-            //    opt.UseSqlServer(builder.Configuration.GetConnectionString("SotequiDB")).EnableSensitiveDataLogging();
-            //});
+            builder.Services.AddDbContext<CoopersamContext>(opt =>
+            {
+                opt.UseMySql(builder.Configuration.GetConnectionString("CoopersamConnection"), new MySqlServerVersion(new Version(8, 0, 23))).EnableSensitiveDataLogging();
+            });
             builder.Services.AddControllers().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.PropertyNamingPolicy = null;
