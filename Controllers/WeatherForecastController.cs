@@ -1,7 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Coopersam_WebAPI_CS.Services.Core;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Coopersam_WebAPI_CS.Controllers
 {
+    /// <summary>
+    /// COntroller base de testes
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -17,7 +21,10 @@ namespace Coopersam_WebAPI_CS.Controllers
         {
             _logger = logger;
         }
-
+        /// <summary>
+        /// GetPadrao de teste
+        /// </summary>
+        /// <returns></returns>
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {

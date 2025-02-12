@@ -1,4 +1,4 @@
-namespace Coopersam_WebAPI_CS
+namespace Coopersam_WebAPI_CS.Services.Core
 {
     public class WeatherForecast
     {
