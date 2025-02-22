@@ -1,5 +1,8 @@
 ﻿using Coopersam_WebAPI_CS.Connections.Configurations;
 using Coopersam_WebAPI_CS.Connections.Database;
+using Coopersam_WebAPI_CS.Extensions.Middleware;
+using Coopersam_WebAPI_CS.Services.Usuarios;
+using Coopersam_WebAPI_CS.Services.Usuarios.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
@@ -16,12 +19,12 @@ namespace Coopersam_WebAPI_CS.Extensions
             #region Services
 
             //services.AddScoped<Interface, Service>();
-
+            services.AddScoped<IUsuarioService, UsuarioService>();
             #endregion Services
 
             #region Other
 
-            //ServiceLocator.IncluirServico(services.BuildServiceProvider());
+            ServiceLocator.IncluirServico(services.BuildServiceProvider());
 
             #endregion Other
         }
