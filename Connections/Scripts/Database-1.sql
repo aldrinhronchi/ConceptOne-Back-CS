@@ -54,8 +54,8 @@ CREATE TABLE IF NOT EXISTS Cargos (
     Ativo BOOLEAN NOT NULL DEFAULT TRUE,
     DataCriado DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
     DataAlterado DATETIME(6) NULL,
-    IDUsuarioCriado INT NOT NULL DEFAULT 0,
-    IDUsuarioAlterado INT NULL DEFAULT 0,
+     UsuarioCriado VARCHAR(255) DEFAULT 'SISTEMA',
+    UsuarioAlterado VARCHAR(255) DEFAULT NULL
     PRIMARY KEY (ID)
 );
 
@@ -65,13 +65,14 @@ FOREIGN KEY (IDCargo) REFERENCES Cargos(ID);
 
 -- Modulos
 DROP TABLE IF EXISTS Modulos;
-
 CREATE TABLE IF NOT EXISTS Modulos (
     ID INT AUTO_INCREMENT NOT NULL,
     Nome VARCHAR(100) NOT NULL,
-    Ativo BOOLEAN NOT NULL DEFAULT TRUE,
+    Icone VARCHAR(100) NOT NULL,
+    Ativo BOOLEAN NOT NULL DEFAULT 1,
     PRIMARY KEY (ID)
 );
+
 
 
 -- Paginas
@@ -82,7 +83,6 @@ CREATE TABLE IF NOT EXISTS Paginas (
     IDModulo INT NOT NULL,
     Nome VARCHAR(100) NOT NULL,
     Url VARCHAR(100) NULL,
-    Icone VARCHAR(100) NOT NULL,
     Ordem INT NOT NULL,
     Ativo BOOLEAN NOT NULL DEFAULT TRUE,
     PRIMARY KEY (ID),
@@ -112,3 +112,16 @@ ADD CONSTRAINT FK_Permissoes_Paginas FOREIGN KEY (IDPagina) REFERENCES Paginas(I
 ALTER TABLE Paginas
 ADD CONSTRAINT FK_Paginas_Modulos FOREIGN KEY (IDModulo) REFERENCES Modulos(ID);
 
+
+
+
+
+
+INSERT INTO Modulos (ID, Nome, Icone, Ativo) VALUES (1, 'Usuário', 'mdi mdi-account', 1);
+INSERT INTO Paginas (ID, IDModulo, Nome, Url, Ordem, Ativo) VALUES (1, 1, 'Usuários', '/usuarios', 1, 1);
+INSERT INTO Paginas (ID, IDModulo, Nome, Url, Ordem, Ativo) VALUES (2, 1, 'Cargos', '/cargos', 2, 1);
+INSERT INTO Permissoes (ID, IDCargo, IDModulo, IDPagina, Criar, Revisar, Editar, Deletar) VALUES (1, 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO Permissoes (ID, IDCargo, IDModulo, IDPagina, Criar, Revisar, Editar, Deletar) VALUES (2, 1, 1, 2, 1, 1, 1, 1);
+
+
+INSERT INTO `Cargos` (Nome) values ('ADMIN');

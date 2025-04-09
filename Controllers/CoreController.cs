@@ -1,6 +1,25 @@
-﻿namespace Coopersam_WebAPI_CS.Controllers
+﻿using Coopersam_WebAPI_CS.Services.Core.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Coopersam_WebAPI_CS.Controllers
 {
-    public class CoreController
+    [Route("api/[controller]")]
+    [Authorize]
+    [ApiController]
+    public class CoreController : ControllerBase
     {
+        private readonly ICoreService coreService;
+
+        public CoreController(ICoreService CoreService)
+        {
+            this.coreService = CoreService;
+        }
+
+        [HttpGet("{IDCargo}")]
+        public ActionResult Index(String IDCargo)
+        {
+            return Ok(this.coreService.ExibirMenu(IDCargo));
+        }
     }
 }

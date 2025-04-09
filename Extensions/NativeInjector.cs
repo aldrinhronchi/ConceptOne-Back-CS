@@ -1,6 +1,8 @@
 ﻿using Coopersam_WebAPI_CS.Connections.Configurations;
 using Coopersam_WebAPI_CS.Connections.Database;
 using Coopersam_WebAPI_CS.Extensions.Middleware;
+using Coopersam_WebAPI_CS.Services.Core;
+using Coopersam_WebAPI_CS.Services.Core.Interfaces;
 using Coopersam_WebAPI_CS.Services.Usuarios;
 using Coopersam_WebAPI_CS.Services.Usuarios.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -20,6 +22,9 @@ namespace Coopersam_WebAPI_CS.Extensions
 
             //services.AddScoped<Interface, Service>();
             services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<ICargoService, CargoService>();
+            services.AddScoped<IPermissoesService, PermissoesService>();
+            services.AddScoped<ICoreService, CoreService>();
             #endregion Services
 
             #region Other
@@ -97,7 +102,7 @@ namespace Coopersam_WebAPI_CS.Extensions
                 app.UseDeveloperExceptionPage();
             }
             app.UseHttpsRedirection();
-            //app.AddMiddlewares();
+            app.AddMiddlewares();
             app.UseCors("Origins");
 
             #region Files
@@ -125,6 +130,13 @@ namespace Coopersam_WebAPI_CS.Extensions
             //    SendEmailWorker EmailWorker = new SendEmailWorker();
             //    EmailWorker.Initialize();
             //}
+        }
+    }
+    public static class MiddlewareRegistrationExtension
+    {
+        public static void AddMiddlewares(this IApplicationBuilder builder)
+        {
+            builder.UseMiddleware<ErrorMiddleware>();
         }
     }
 }

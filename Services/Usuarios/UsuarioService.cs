@@ -92,18 +92,18 @@ namespace Coopersam_WebAPI_CS.Services.Usuarios
             Validator.ValidateObject(UsuarioViewModel, new ValidationContext(UsuarioViewModel), true);
             using (CoopersamContext db = new CoopersamContext())
             {
-                //Cargo? _Cargo = db.Cargo.Find(UsuarioViewModel.IDCargo);
-                //if (_Cargo == null)
-                //{
-                //    throw new ValidationException("Cargo invalido!");
-                //}
-                //else
-                //{
-                //    if (!_Cargo.Ativo)
-                //    {
-                //        throw new ValidationException("Cargo invalido!");
-                //    }
-                //}
+                Cargo? _Cargo = db.Cargo.Find(UsuarioViewModel.IDCargo);
+                if (_Cargo == null)
+                {
+                    throw new ValidationException("Cargo invalido!");
+                }
+                else
+                {
+                    if (!_Cargo.Ativo)
+                    {
+                        throw new ValidationException("Cargo invalido!");
+                    }
+                }
                 IRepository<Usuario> UsuarioRepo = new Repository<Usuario>(db);
                 Usuario? _Usuario = db.Usuario.AsNoTracking().FirstOrDefault(x => x.ID == UsuarioViewModel.ID);
                 if (_Usuario == null)
