@@ -1,7 +1,7 @@
-﻿using Coopersam_WebAPI_CS.Models.Usuario;
-using Coopersam_WebAPI_CS.Models.ViewModels;
+﻿using TMODELOBASET_WebAPI_CS.Models.Usuario;
+using TMODELOBASET_WebAPI_CS.Models.ViewModels;
 
-namespace Coopersam_WebAPI_CS.Services.Usuarios.Interfaces
+namespace TMODELOBASET_WebAPI_CS.Services.Usuarios.Interfaces
 {
     public interface ICargoService
     {

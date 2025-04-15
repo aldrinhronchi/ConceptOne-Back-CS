@@ -2,7 +2,7 @@
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
-namespace Coopersam_WebAPI_CS.Connections.Configurations
+namespace TMODELOBASET_WebAPI_CS.Connections.Configurations
 {
     public static class SwaggerSetup
     {
@@ -12,9 +12,9 @@ namespace Coopersam_WebAPI_CS.Connections.Configurations
             {
                 option.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Coopersam API .Net Core",
+                    Title = "TMODELOBASET API .Net Core",
                     Version = "v0.1",
-                    Description = "API Base dos Sistemas da Coopersam feitos em .Net",
+                    Description = "API Base dos Sistemas da TMODELOBASET feitos em .Net",
                     Contact = new OpenApiContact
                     {
                         Name = "Concept One",

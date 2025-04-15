@@ -1,10 +1,10 @@
-﻿using Coopersam_WebAPI_CS.Connections.Configurations;
-using Coopersam_WebAPI_CS.Connections.Database;
-using Coopersam_WebAPI_CS.Extensions.Middleware;
-using Coopersam_WebAPI_CS.Services.Core;
-using Coopersam_WebAPI_CS.Services.Core.Interfaces;
-using Coopersam_WebAPI_CS.Services.Usuarios;
-using Coopersam_WebAPI_CS.Services.Usuarios.Interfaces;
+﻿using TMODELOBASET_WebAPI_CS.Connections.Configurations;
+using TMODELOBASET_WebAPI_CS.Connections.Database;
+using TMODELOBASET_WebAPI_CS.Extensions.Middleware;
+using TMODELOBASET_WebAPI_CS.Services.Core;
+using TMODELOBASET_WebAPI_CS.Services.Core.Interfaces;
+using TMODELOBASET_WebAPI_CS.Services.Usuarios;
+using TMODELOBASET_WebAPI_CS.Services.Usuarios.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
@@ -12,7 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 
 using System.Text;
 
-namespace Coopersam_WebAPI_CS.Extensions
+namespace TMODELOBASET_WebAPI_CS.Extensions
 {
     public class NativeInjector
     {
@@ -38,9 +38,9 @@ namespace Coopersam_WebAPI_CS.Extensions
         {
             #region Context
 
-            builder.Services.AddDbContext<CoopersamContext>(opt =>
+            builder.Services.AddDbContext<TMODELOBASETContext>(opt =>
             {
-                opt.UseMySql(builder.Configuration.GetConnectionString("CoopersamConnection"), new MySqlServerVersion(new Version(8, 0, 23))).EnableSensitiveDataLogging();
+                opt.UseMySql(builder.Configuration.GetConnectionString("TMODELOBASETConnection"), new MySqlServerVersion(new Version(8, 0, 23))).EnableSensitiveDataLogging();
             });
             builder.Services.AddControllers().AddJsonOptions(options =>
             {

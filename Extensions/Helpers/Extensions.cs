@@ -8,7 +8,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
-namespace Coopersam_WebAPI_CS.Extensions.Helpers
+namespace TMODELOBASET_WebAPI_CS.Extensions.Helpers
 {
     public static class Extensions
     {

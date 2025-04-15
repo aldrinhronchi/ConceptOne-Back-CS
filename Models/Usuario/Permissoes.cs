@@ -1,4 +1,4 @@
-﻿namespace Coopersam_WebAPI_CS.Models.Usuario
+﻿namespace TMODELOBASET_WebAPI_CS.Models.Usuario
 {
     public class Permissoes
     {

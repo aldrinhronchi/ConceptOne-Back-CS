@@ -1,11 +1,11 @@
-﻿using Coopersam_WebAPI_CS.Extensions.Middleware;
-using Coopersam_WebAPI_CS.Models.Usuario;
+﻿using TMODELOBASET_WebAPI_CS.Extensions.Middleware;
+using TMODELOBASET_WebAPI_CS.Models.Usuario;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace Coopersam_WebAPI_CS.Extensions.Helpers
+namespace TMODELOBASET_WebAPI_CS.Extensions.Helpers
 {
     /// <summary>
     /// Helper para efetuar as ações relacionadas ao Token JWT

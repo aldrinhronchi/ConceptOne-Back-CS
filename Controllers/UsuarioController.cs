@@ -1,10 +1,10 @@
-﻿using Coopersam_WebAPI_CS.Models.Usuario;
-using Coopersam_WebAPI_CS.Models.ViewModels;
-using Coopersam_WebAPI_CS.Services.Usuarios.Interfaces;
+﻿using TMODELOBASET_WebAPI_CS.Models.Usuario;
+using TMODELOBASET_WebAPI_CS.Models.ViewModels;
+using TMODELOBASET_WebAPI_CS.Services.Usuarios.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Coopersam_WebAPI_CS.Controllers
+namespace TMODELOBASET_WebAPI_CS.Controllers
 {
     //[Authorize]
     [Route("api/[controller]/[action]")]

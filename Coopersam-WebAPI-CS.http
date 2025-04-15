@@ -1,6 +1,0 @@
-@Coopersam_WebAPI_CS_HostAddress = http://localhost:5094
-
-GET {{Coopersam_WebAPI_CS_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

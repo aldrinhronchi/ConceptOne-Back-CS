@@ -1,35 +1,31 @@
-﻿using Coopersam_WebAPI_CS.Models.Entities;
-using Coopersam_WebAPI_CS.Models.Usuario;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using TMODELOBASET_WebAPI_CS.Models.Entities;
+using TMODELOBASET_WebAPI_CS.Models.Usuario;
 
-namespace Coopersam_WebAPI_CS.Connections.Database
+namespace TMODELOBASET_WebAPI_CS.Connections
 {
-    public class CoopersamContext : DbContext
+    public class DatabaseContext : DbContext
     {
-        public CoopersamContext(DbContextOptions options) : base(options)
+        public DatabaseContext(DbContextOptions<DatabaseContext> option) : base(option)
         {
         }
 
-        #region DBSet
+        public DatabaseContext() : base()
+        {
+        }
 
-        #region Usuario
+        #region Dbset
 
-        public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<Modulo> Modulo { get; set; }
-        public DbSet<Cargo> Cargo { get; set; }
-        public DbSet<Pagina> Pagina { get; set; }
-        public DbSet<Permissoes> Permissoes { get; set; }
-
-        #endregion Usuario
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Cargo> Cargos { get; set; }
 
         public DbSet<Erro> ErrosLog { get; set; }
         public DbSet<Ocorrencia> OcorrenciaLog { get; set; }
+        public DbSet<Permissoes> Permissoes { get; internal set; }
+        public DbSet<Modulo> Modulos { get; internal set; }
+        public DbSet<Pagina> Paginas { get; internal set; }
 
-        #endregion DBSet
-
-        public CoopersamContext() : base()
-        {
-        }
+        #endregion Dbset
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -49,7 +45,7 @@ namespace Coopersam_WebAPI_CS.Connections.Database
                                                                          .SetBasePath(Environment.CurrentDirectory)
                                                                          .AddJsonFile("appsettings.json")
                                                                          .Build();
-            optionsBuilder.UseMySql(configuration.GetConnectionString("CoopersamConnection"), new MySqlServerVersion(new Version(8, 0, 23)));
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DatabaseDB"));
         }
     }
 }

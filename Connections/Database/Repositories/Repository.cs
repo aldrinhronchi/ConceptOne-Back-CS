@@ -1,15 +1,15 @@
-﻿using Coopersam_WebAPI_CS.Connections.Database.Repositories.Interfaces;
+﻿using TMODELOBASET_WebAPI_CS.Connections.Database.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Linq.Expressions;
 
-namespace Coopersam_WebAPI_CS.Connections.Database.Repositories
+namespace TMODELOBASET_WebAPI_CS.Connections.Database.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         #region 'Properties'
 
-        protected readonly CoopersamContext _context;
+        protected readonly TMODELOBASETContext _context;
 
         protected DbSet<TEntity> DbSet
         {
@@ -21,7 +21,7 @@ namespace Coopersam_WebAPI_CS.Connections.Database.Repositories
 
         #endregion 'Properties'
 
-        public Repository(CoopersamContext context)
+        public Repository(TMODELOBASETContext context)
         {
             _context = context;
         }

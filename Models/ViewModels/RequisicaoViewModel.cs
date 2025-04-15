@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Coopersam_WebAPI_CS.Models.ViewModels
+namespace TMODELOBASET_WebAPI_CS.Models.ViewModels
 {
     /// <summary>
     /// View Model (Sem Registros no DB) para padronizar a comunicação do Back-End com o Front-End

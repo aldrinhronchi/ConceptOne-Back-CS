@@ -1,10 +1,10 @@
-﻿using Coopersam_WebAPI_CS.Connections.Database;
-using Coopersam_WebAPI_CS.Models.Usuario;
-using Coopersam_WebAPI_CS.Models.ViewModels;
-using Coopersam_WebAPI_CS.Services.Core.Interfaces;
+﻿using TMODELOBASET_WebAPI_CS.Connections.Database;
+using TMODELOBASET_WebAPI_CS.Models.Usuario;
+using TMODELOBASET_WebAPI_CS.Models.ViewModels;
+using TMODELOBASET_WebAPI_CS.Services.Core.Interfaces;
 using System.ComponentModel.DataAnnotations;
 
-namespace Coopersam_WebAPI_CS.Services.Core
+namespace TMODELOBASET_WebAPI_CS.Services.Core
 {
     public class CoreService :ICoreService
     {
@@ -16,7 +16,7 @@ namespace Coopersam_WebAPI_CS.Services.Core
             }
             List<MenuViewModel> Menu = new List<MenuViewModel>();
 
-            using (CoopersamContext db = new CoopersamContext())
+            using (TMODELOBASETContext db = new TMODELOBASETContext())
             {
                 Cargo? Cargo = db.Cargo.Find(CargoID);
                 if (Cargo == null || !Cargo.Ativo)

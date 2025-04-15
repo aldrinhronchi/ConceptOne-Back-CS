@@ -1,8 +1,8 @@
-﻿using Coopersam_WebAPI_CS.Connections.Database;
-using Coopersam_WebAPI_CS.Services.Core;
+﻿using TMODELOBASET_WebAPI_CS.Connections.Database;
+using TMODELOBASET_WebAPI_CS.Services.Core;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Coopersam_WebAPI_CS.Controllers
+namespace TMODELOBASET_WebAPI_CS.Controllers
 {
     /// <summary>
     /// COntroller base de testes

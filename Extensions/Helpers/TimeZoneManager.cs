@@ -1,4 +1,4 @@
-﻿namespace Coopersam_WebAPI_CS.Extensions.Helpers
+﻿namespace TMODELOBASET_WebAPI_CS.Extensions.Helpers
 {
     public class TimeZoneManager
     {

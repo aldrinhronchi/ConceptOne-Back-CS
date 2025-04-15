@@ -1,8 +1,8 @@
-﻿using Coopersam_WebAPI_CS.Services.Core.Interfaces;
+﻿using TMODELOBASET_WebAPI_CS.Services.Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Coopersam_WebAPI_CS.Controllers
+namespace TMODELOBASET_WebAPI_CS.Controllers
 {
     [Route("api/[controller]")]
     [Authorize]

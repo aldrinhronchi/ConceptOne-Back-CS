@@ -1,4 +1,4 @@
-﻿namespace Coopersam_WebAPI_CS.Models.ViewModels
+﻿namespace TMODELOBASET_WebAPI_CS.Models.ViewModels
 {
     /// <summary>
     /// View Model (Sem Registros no DB) da Página para ser usada no Front-End

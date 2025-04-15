@@ -1,4 +1,4 @@
-﻿namespace Coopersam_WebAPI_CS.Extensions.Middleware
+﻿namespace TMODELOBASET_WebAPI_CS.Extensions.Middleware
 {
     public class ServiceLocator
     {

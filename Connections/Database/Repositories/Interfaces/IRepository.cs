@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Coopersam_WebAPI_CS.Connections.Database.Repositories.Interfaces
+namespace TMODELOBASET_WebAPI_CS.Connections.Database.Repositories.Interfaces
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : class
     {

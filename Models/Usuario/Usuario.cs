@@ -1,7 +1,7 @@
-﻿using Coopersam_WebAPI_CS.Models.Entities;
+﻿using TMODELOBASET_WebAPI_CS.Models.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Coopersam_WebAPI_CS.Models.Usuario
+namespace TMODELOBASET_WebAPI_CS.Models.Usuario
 {
     [Table("Usuarios")]
     public class Usuario : Entity

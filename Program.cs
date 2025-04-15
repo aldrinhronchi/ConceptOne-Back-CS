@@ -1,4 +1,4 @@
-using Coopersam_WebAPI_CS.Extensions;
+using TMODELOBASET_WebAPI_CS.Extensions;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 

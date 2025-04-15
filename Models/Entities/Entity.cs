@@ -1,4 +1,4 @@
-﻿namespace Coopersam_WebAPI_CS.Models.Entities
+﻿namespace TMODELOBASET_WebAPI_CS.Models.Entities
 {
     /// <summary>
     /// Classe Pai contendo o basico para boa parte dos cadastros <br/>

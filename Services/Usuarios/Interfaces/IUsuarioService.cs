@@ -1,10 +1,10 @@
-﻿using Coopersam_WebAPI_CS.Connections.Database;
-using Coopersam_WebAPI_CS.Extensions.Helpers;
-using Coopersam_WebAPI_CS.Models.Usuario;
-using Coopersam_WebAPI_CS.Models.ViewModels;
+﻿using TMODELOBASET_WebAPI_CS.Connections.Database;
+using TMODELOBASET_WebAPI_CS.Extensions.Helpers;
+using TMODELOBASET_WebAPI_CS.Models.Usuario;
+using TMODELOBASET_WebAPI_CS.Models.ViewModels;
 using System.ComponentModel.DataAnnotations;
 
-namespace Coopersam_WebAPI_CS.Services.Usuarios.Interfaces
+namespace TMODELOBASET_WebAPI_CS.Services.Usuarios.Interfaces
 {
     public interface IUsuarioService
     {

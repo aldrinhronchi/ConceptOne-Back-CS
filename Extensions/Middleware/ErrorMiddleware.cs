@@ -1,12 +1,12 @@
-﻿using Coopersam_WebAPI_CS.Connections.Database;
-using Coopersam_WebAPI_CS.Extensions.Helpers;
-using Coopersam_WebAPI_CS.Models.Entities;
+﻿using TMODELOBASET_WebAPI_CS.Connections.Database;
+using TMODELOBASET_WebAPI_CS.Extensions.Helpers;
+using TMODELOBASET_WebAPI_CS.Models.Entities;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Net;
 using System.Text.Json;
 
-namespace Coopersam_WebAPI_CS.Extensions.Middleware
+namespace TMODELOBASET_WebAPI_CS.Extensions.Middleware
 {
     public class ErrorMiddleware
     {
@@ -17,7 +17,7 @@ namespace Coopersam_WebAPI_CS.Extensions.Middleware
             this.requestDelegate = requestDelegate;
         }
 
-        public async Task InvokeAsync(HttpContext context, CoopersamContext database)
+        public async Task InvokeAsync(HttpContext context, TMODELOBASETContext database)
         {
             try
             {

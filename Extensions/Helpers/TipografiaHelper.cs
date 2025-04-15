@@ -1,9 +1,9 @@
-﻿using Coopersam_WebAPI_CS.Models.ViewModels;
+﻿using TMODELOBASET_WebAPI_CS.Models.ViewModels;
 using System.ComponentModel.DataAnnotations;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Coopersam_WebAPI_CS.Extensions.Helpers
+namespace TMODELOBASET_WebAPI_CS.Extensions.Helpers
 {
     /// <summary>
     /// Helper para efetuar as ações de paginação e filtragem

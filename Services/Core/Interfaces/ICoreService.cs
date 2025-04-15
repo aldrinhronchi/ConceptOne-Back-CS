@@ -1,6 +1,6 @@
-﻿using Coopersam_WebAPI_CS.Models.ViewModels;
+﻿using TMODELOBASET_WebAPI_CS.Models.ViewModels;
 
-namespace Coopersam_WebAPI_CS.Services.Core.Interfaces
+namespace TMODELOBASET_WebAPI_CS.Services.Core.Interfaces
 {
     public interface ICoreService
     {

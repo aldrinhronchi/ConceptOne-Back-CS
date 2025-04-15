@@ -1,13 +1,13 @@
-﻿using Coopersam_WebAPI_CS.Connections.Database;
-using Coopersam_WebAPI_CS.Connections.Database.Repositories;
-using Coopersam_WebAPI_CS.Models.Usuario;
-using Coopersam_WebAPI_CS.Models.ViewModels;
-using Coopersam_WebAPI_CS.Services.Usuarios.Interfaces;
+﻿using TMODELOBASET_WebAPI_CS.Connections.Database;
+using TMODELOBASET_WebAPI_CS.Connections.Database.Repositories;
+using TMODELOBASET_WebAPI_CS.Models.Usuario;
+using TMODELOBASET_WebAPI_CS.Models.ViewModels;
+using TMODELOBASET_WebAPI_CS.Services.Usuarios.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 
-namespace Coopersam_WebAPI_CS.Services.Usuarios
+namespace TMODELOBASET_WebAPI_CS.Services.Usuarios
 {
     public class PermissoesService : IPermissoesService
     {
@@ -19,7 +19,7 @@ namespace Coopersam_WebAPI_CS.Services.Usuarios
             }
             List<MenuViewModel> Menu = new List<MenuViewModel>();
 
-            using (CoopersamContext db = new CoopersamContext())
+            using (TMODELOBASETContext db = new TMODELOBASETContext())
             {
                 Cargo? Cargo = db.Cargo.Find(CargoID);
                 if (Cargo == null)
@@ -91,7 +91,7 @@ namespace Coopersam_WebAPI_CS.Services.Usuarios
                 throw new ValidationException("Não é possivel alterar o cargo Administrador!");
             }
 
-            using (CoopersamContext db = new CoopersamContext())
+            using (TMODELOBASETContext db = new TMODELOBASETContext())
             {
                 Cargo? Cargo = db.Cargo.Find(CargoID);
                 if (Cargo == null || !Cargo.Ativo)

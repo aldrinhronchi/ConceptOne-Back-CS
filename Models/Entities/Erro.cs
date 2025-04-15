@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Coopersam_WebAPI_CS.Models.Entities
+namespace TMODELOBASET_WebAPI_CS.Models.Entities
 {
     [Table("ErrosLog")]
     public class Erro

@@ -1,15 +1,15 @@
-﻿using Coopersam_WebAPI_CS.Connections.Database;
-using Coopersam_WebAPI_CS.Connections.Database.Repositories;
-using Coopersam_WebAPI_CS.Connections.Database.Repositories.Interfaces;
-using Coopersam_WebAPI_CS.Extensions.Helpers;
-using Coopersam_WebAPI_CS.Models.Usuario;
-using Coopersam_WebAPI_CS.Models.ViewModels;
-using Coopersam_WebAPI_CS.Services.Usuarios.Interfaces;
+﻿using TMODELOBASET_WebAPI_CS.Connections.Database;
+using TMODELOBASET_WebAPI_CS.Connections.Database.Repositories;
+using TMODELOBASET_WebAPI_CS.Connections.Database.Repositories.Interfaces;
+using TMODELOBASET_WebAPI_CS.Extensions.Helpers;
+using TMODELOBASET_WebAPI_CS.Models.Usuario;
+using TMODELOBASET_WebAPI_CS.Models.ViewModels;
+using TMODELOBASET_WebAPI_CS.Services.Usuarios.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 
-namespace Coopersam_WebAPI_CS.Services.Usuarios
+namespace TMODELOBASET_WebAPI_CS.Services.Usuarios
 {
     public class CargoService : ICargoService
     {
@@ -21,7 +21,7 @@ namespace Coopersam_WebAPI_CS.Services.Usuarios
             String CamposQuery = "", String ValoresQuery = "", String Ordenacao = "", Boolean Ordem = false)
         {
             RequisicaoViewModel<Cargo> requisicao;
-            using (CoopersamContext db = new CoopersamContext())
+            using (TMODELOBASETContext db = new TMODELOBASETContext())
             {
                 IQueryable<Cargo> _Cargos = db.Cargo.AsQueryable();
                 if (!String.IsNullOrWhiteSpace(CamposQuery))
@@ -74,7 +74,7 @@ namespace Coopersam_WebAPI_CS.Services.Usuarios
         public Boolean Salvar(Cargo CargoViewModel)
         {
             Validator.ValidateObject(CargoViewModel, new ValidationContext(CargoViewModel), true);
-            using (CoopersamContext db = new CoopersamContext())
+            using (TMODELOBASETContext db = new TMODELOBASETContext())
             {
                 IRepository<Cargo> CargoRepo = new Repository<Cargo>(db);
                 Cargo? _Cargo = db.Cargo.AsNoTracking().FirstOrDefault(x => x.ID == CargoViewModel.ID);
@@ -106,7 +106,7 @@ namespace Coopersam_WebAPI_CS.Services.Usuarios
             {
                 throw new ValidationException("O cargo Administrador não pode ser exluido");
             }
-            using (CoopersamContext db = new CoopersamContext())
+            using (TMODELOBASETContext db = new TMODELOBASETContext())
             {
                 IRepository<Cargo> CargoRepo = new Repository<Cargo>(db);
                 Cargo? _Cargo = CargoRepo.Find(CargoID);

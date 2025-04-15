@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Coopersam_WebAPI_CS.Models.Usuario
+namespace TMODELOBASET_WebAPI_CS.Models.Usuario
 {
     [Table("Paginas")]
     public class Pagina

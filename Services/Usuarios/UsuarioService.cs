@@ -1,16 +1,16 @@
-﻿using Coopersam_WebAPI_CS.Connections.Database;
-using Coopersam_WebAPI_CS.Connections.Database.Repositories;
-using Coopersam_WebAPI_CS.Connections.Database.Repositories.Interfaces;
-using Coopersam_WebAPI_CS.Extensions.Helpers;
-using Coopersam_WebAPI_CS.Models.Usuario;
-using Coopersam_WebAPI_CS.Models.ViewModels;
-using Coopersam_WebAPI_CS.Services.Usuarios.Interfaces;
+﻿using TMODELOBASET_WebAPI_CS.Connections.Database;
+using TMODELOBASET_WebAPI_CS.Connections.Database.Repositories;
+using TMODELOBASET_WebAPI_CS.Connections.Database.Repositories.Interfaces;
+using TMODELOBASET_WebAPI_CS.Extensions.Helpers;
+using TMODELOBASET_WebAPI_CS.Models.Usuario;
+using TMODELOBASET_WebAPI_CS.Models.ViewModels;
+using TMODELOBASET_WebAPI_CS.Services.Usuarios.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Coopersam_WebAPI_CS.Services.Usuarios
+namespace TMODELOBASET_WebAPI_CS.Services.Usuarios
 {
     public class UsuarioService : IUsuarioService
     {
@@ -18,7 +18,7 @@ namespace Coopersam_WebAPI_CS.Services.Usuarios
             String CamposQuery = "", String ValoresQuery = "", String Ordenacao = "", Boolean Ordem = false)
         {
             RequisicaoViewModel<Usuario> Requisicao;
-            using (CoopersamContext db = new CoopersamContext())
+            using (TMODELOBASETContext db = new TMODELOBASETContext())
             {
                 IQueryable<Usuario> _Usuarios = db.Usuario.Include(x => x.Cargo);
                 if (!String.IsNullOrWhiteSpace(CamposQuery))
@@ -90,7 +90,7 @@ namespace Coopersam_WebAPI_CS.Services.Usuarios
         public Boolean Salvar(Usuario UsuarioViewModel)
         {
             Validator.ValidateObject(UsuarioViewModel, new ValidationContext(UsuarioViewModel), true);
-            using (CoopersamContext db = new CoopersamContext())
+            using (TMODELOBASETContext db = new TMODELOBASETContext())
             {
                 Cargo? _Cargo = db.Cargo.Find(UsuarioViewModel.IDCargo);
                 if (_Cargo == null)
@@ -148,7 +148,7 @@ namespace Coopersam_WebAPI_CS.Services.Usuarios
             {
                 throw new ValidationException("ID invalido!");
             }
-            using (CoopersamContext db = new CoopersamContext())
+            using (TMODELOBASETContext db = new TMODELOBASETContext())
             {
                 IRepository<Usuario> UsuarioRepo = new Repository<Usuario>(db);
 
@@ -170,7 +170,7 @@ namespace Coopersam_WebAPI_CS.Services.Usuarios
 
             Requisicao.Senha = EncriptarSenha(Requisicao.Senha);
             List<Usuario>? Usuarios = null;
-            using (CoopersamContext db = new CoopersamContext())
+            using (TMODELOBASETContext db = new TMODELOBASETContext())
             {
                 Usuarios = db.Usuario.Where(x => (x.Email.ToUpper() == Requisicao.Login.ToUpper() || x.Login.ToUpper() == Requisicao.Login.ToUpper())
                                                  && x.Ativo).ToList();
